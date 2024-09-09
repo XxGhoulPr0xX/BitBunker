@@ -5,38 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Estudiante</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/inter.css' %}">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --background: hsl(0, 0%, 100%);
-            --foreground: hsl(240, 10%, 3.9%);
-            --card: hsl(0, 0%, 100%);
-            --card-foreground: hsl(240, 10%, 3.9%);
-            --primary: hsl(240, 5.9%, 10%);
-            --primary-foreground: hsl(0, 0%, 98%);
-            --secondary: hsl(240, 4.8%, 95.9%);
-            --secondary-foreground: hsl(240, 5.9%, 10%);
-            --muted: hsl(240, 4.8%, 95.9%);
-            --muted-foreground: hsl(240, 3.8%, 45%);
-            --accent: hsl(240, 4.8%, 95.9%);
-            --accent-foreground: hsl(240, 5.9%, 10%);
-            --destructive: hsl(0, 72%, 51%);
-            --destructive-foreground: hsl(0, 0%, 98%);
-            --border: hsl(240, 5.9%, 90%);
-            --input: hsl(240, 5.9%, 90%);
-            --ring: hsl(240, 5.9%, 10%);
-            --radius: 0.5rem;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background);
-            color: var(--foreground);
-        }
-    </style>
 </head>
-
 <body class="w-full min-h-screen bg-gradient-to-br from-primary to-secondary text-primary-foreground">
 
     <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full max-w-md mx-auto mt-10"
