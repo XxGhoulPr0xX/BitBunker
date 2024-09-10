@@ -1,0 +1,1 @@
+De alguna manera sin esto, no funciona el entorno virtual entonces lo dejo
