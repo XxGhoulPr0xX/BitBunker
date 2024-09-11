@@ -10,3 +10,5 @@ def home(request):
 def registrarse(request):
     return render(request, 'users/registrarse.html')
 
+
+
