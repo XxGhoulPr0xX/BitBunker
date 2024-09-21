@@ -1,141 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registrarse</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'users/css/registrarse.css' %}">
-    <link rel="stylesheet" href="{% static 'users\css\registrarse.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>registrarse</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'users\css\registrarse.css' %}">
 </head>
+
 <body>
-    <div class="flex min-h-[100dvh] items-center justify-center bg-gradient-to-br from-[#000000] to-[#333333] px-4 py-12 sm:px-6 lg:px-8">
-        <div class="mx-auto w-full max-w-md space-y-6">
-          <div class="text-center">
-            <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Crea una cuenta</h1>
-            <p class="mt-2 text-sm text-muted-foreground">
-              ¿Ya tienes una cuenta?
-              <a class="font-medium text-primary hover:underline" href="#">
-                Inicia sesión
-              </a>
-            </p>
-          </div>
-          <form class="space-y-4">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
-                  for="name"
-                >
-                  Nombre
-                </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
-                  type="text"
-                  id="name"
-                  placeholder="Nombre"
-                />
-              </div>
-              <div>
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
-                  for="paternal-surname"
-                >
-                  Apellido paterno
-                </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
-                  type="text"
-                  id="paternal-surname"
-                  placeholder="Apellido paterno"
-                />
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
-                  for="maternal-surname"
-                >
-                  Apellido materno
-                </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
-                  type="text"
-                  id="maternal-surname"
-                  placeholder="Apellido materno"
-                />
-              </div>
-              <div>
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
-                  for="control-number"
-                >
-                  Número de control
-                </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
-                  type="text"
-                  id="control-number"
-                  placeholder="Número de control"
-                />
-              </div>
-            </div>
-            <div>
-              <label
-                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
-                for="email"
-              >
-                Correo electrónico
-              </label>
-              <input
-                class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
-                type="email"
-                id="email"
-                placeholder="Correo electrónico"
-              />
-            </div>
-            <div>
-              <label
-                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
-                for="password"
-              >
-                Contraseña
-              </label>
-              <input
-                class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
-                type="password"
-                id="password"
-                placeholder="Contraseña"
-              />
-            </div>
-            <button
-              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
-              type="submit"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="mr-2 h-4 w-4"
-              >
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              Registrarse
-            </button>
-          </form>
-        </div>
+  <div
+    class="flex min-h-[100dvh] items-center justify-center bg-gradient-to-br from-[#000000] to-[#333333] px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mx-auto w-full max-w-md space-y-6">
+      <div class="text-center">
+        <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Crea una cuenta</h1>
+        <p class="mt-2 text-sm text-muted-foreground">
+          ¿Ya tienes una cuenta?
+          <a class="font-medium text-primary hover:underline" href="#">
+            Inicia sesión
+          </a>
+        </p>
       </div>
-        
+      <form class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
+              for="name">
+              Nombre
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
+              type="text" id="name" placeholder="Nombre" />
+          </div>
+          <div>
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
+              for="paternal-surname">
+              Apellido paterno
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
+              type="text" id="paternal-surname" placeholder="Apellido paterno" />
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
+              for="maternal-surname">
+              Apellido materno
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
+              type="text" id="maternal-surname" placeholder="Apellido materno" />
+          </div>
+          <div>
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
+              for="control-number">
+              Número de control
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
+              type="text" id="control-number" placeholder="Número de control" />
+          </div>
+        </div>
+        <div>
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
+            for="email">
+            Correo electrónico
+          </label>
+          <input
+            class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
+            type="email" id="email" placeholder="Correo electrónico" />
+        </div>
+        <div>
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
+            for="password">
+            Contraseña
+          </label>
+          <input
+            class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-muted/20 text-white placeholder:text-muted-foreground"
+            type="password" id="password" placeholder="Contraseña" />
+        </div>
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+          type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Registrarse
+        </button>
       </form>
     </div>
   </div>
+  </form>
+  </div>
+  </div>
 </body>
+
 </html>
