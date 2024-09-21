@@ -7,7 +7,7 @@ def profile(request):
 def home(request):
     return render(request,'users/home.html')
 
-def registrarse(request):
+def register(request):
     return render(request, 'users/registrarse.html')
 
 def login(request):
