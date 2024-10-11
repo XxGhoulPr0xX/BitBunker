@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/inter.css' %}">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Iniciar sesión</h3>
+            <p class="card-description">Ingresa tu matricula y contraseña para acceder.</p>
+        </div>
+        <div class="card-content">
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="form-label" for="matricula">Matrícula</label>
+                    <div class="input-group">
+                        <input class="form-input" id="matricula" name="matricula">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="password">Contraseña</label>
+                    <div class="input-group">
+                        <input class="form-input" id="password" name="password" type="password">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="button">Iniciar sesión</button>
+                    <a href="{% url 'register' %}" class="button button-secondary">Registrarse</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

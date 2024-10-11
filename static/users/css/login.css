@@ -1,0 +1,166 @@
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 240 10% 3.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 240 10% 3.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 240 10% 3.9%;
+            --primary: 240 5.9% 10%;
+            --primary-foreground: 0 0% 98%;
+            --secondary: 240 4.8% 95.9%;
+            --secondary-foreground: 240 5.9% 10%;
+            --muted: 240 4.8% 95.9%;
+            --muted-foreground: 240 3.8% 45%;
+            --accent: 240 4.8% 95.9%;
+            --accent-foreground: 240 5.9% 10%;
+            --destructive: 0 72% 51%;
+            --destructive-foreground: 0 0% 98%;
+            --border: 240 5.9% 90%;
+            --input: 240 5.9% 90%;
+            --ring: 240 5.9% 10%;
+            --radius: 0.5rem;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, black, #1a1a1a);
+            overflow: hidden;
+        }
+
+        .background-animation {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom right, #ff6b6b, #ffa500);
+            opacity: 0.2;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .card {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            z-index: 10;
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .card-description {
+            margin-top: 0.25rem;
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 0.875rem;
+            border: 1px solid #ccc;
+            border-radius: var(--radius);
+            background-color: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #000;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            margin-left: 0.5rem;
+            color: #666;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #000;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #333;
+        }
+
+        .button-secondary {
+            background-color: transparent;
+            color: #000;
+            margin-top: 0.75rem;
+        }
+
+        .button-secondary:hover {
+            background-color: #f0f0f0;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
