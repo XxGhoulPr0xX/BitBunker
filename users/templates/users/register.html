@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'users/css/register.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/inter.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-container">
+      <div class="header">
+        <h1>Crea una cuenta</h1>
+        <p>
+          ¿Ya tienes una cuenta?
+          <a href="{% url 'login' %}" class="login-link">Inicia sesión</a>
+        </p>
+      </div>
+      <form method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+        <div class="input-group">
+          <div class="input-field">
+            <label for="name" class="sr-only">Nombre</label>
+            <input type="text" id="name" name="nombre" placeholder="Nombre" required>
+          </div>
+          <div class="input-field">
+            <label for="paternal-surname" class="sr-only">Apellido paterno</label>
+            <input type="text" id="paternal-surname" name="apellidoP" placeholder="Apellido paterno" required>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="input-field">
+            <label for="maternal-surname" class="sr-only">Apellido materno</label>
+            <input type="text" id="maternal-surname" name="apellidoM" placeholder="Apellido materno" required>
+          </div>
+          <div class="input-field">
+            <label for="control-number" class="sr-only">Número de control</label>
+            <input type="text" id="control-number" name="matricula" placeholder="Número de control" maxlength="9"
+              required>
+          </div>
+        </div>
+        <div class="input-field">
+          <label for="password" class="sr-only">Contraseña</label>
+          <input type="password" id="password" name="password" placeholder="Contraseña" required minlength="8">
+        </div>
+        <button type="submit" class="submit-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Registrarse
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

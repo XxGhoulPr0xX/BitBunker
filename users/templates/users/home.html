@@ -30,39 +30,16 @@
                     <circle cx="12" cy="12" r="3"></circle>
                 </svg>
             </a>
-            <a class="link" href="#">
+            <a class="link" href="{% url 'profile' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
                     viewBox="0 0 24 24" class="icon">
                     <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
                 </svg>
             </a>
-
-            <a class="link" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24" class="icon">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-            </a>
-
-            <a class="link" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24" class="icon">
-                    <path
-                        d="m21.12 6.4-6.05-4.06a2 2 0 0 0-2.17-.05L2.95 8.41a2 2 0 0 0-.95 1.7v5.82a2 2 0 0 0 .88 1.66l6.05 4.07a2 2 0 0 0 2.17.05l9.95-6.12a2 2 0 0 0 .95-1.7V8.06a2 2 0 0 0-.88-1.66Z">
-                    </path>
-                </svg>
-            </a>
-            <a class="link" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24" class="icon">
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-            </a>
         </div>
         <div class="progress">
-            <span class="bold">12</span> horas completadas / de <span class="bold">500</span>
+            <span class="bold">{{ horasActuales }}</span> horas completadas / de <span class="bold">500</span>
         </div>
     </div>
 </body>
