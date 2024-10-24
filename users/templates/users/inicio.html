@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a BitBunker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/inicio.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/inter.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">BitBunker</div>
+                <ul>
+                    <li><a href="#about">Acerca de</a></li>
+                    <li><a href="#features">Características</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="hero">
+                <h1>Bienvenido a BitBunker</h1>
+                <p>Gestiona y monitorea eficientemente el seguimiento y reporte de tus horas de servicio social.</p>
+                <a href="{% url 'login' %}" class="cta-button">Inicia sesión</a>
+            </section>
+            <section id="about" class="about">
+                <h2>Acerca de BitBunker</h2>
+                <p>
+                    <strong>BitBunker</strong> es una innovadora plataforma creada especialmente para los estudiantes
+                    del <strong>Tecnológico Nacional de México, campus Tláhuac</strong>. Nuestra misión es
+                    <strong>simplificar y optimizar la gestión de horas de servicio social</strong>, facilitando el
+                    proceso de reportes y el seguimiento del progreso académico. Con herramientas intuitivas y
+                    accesibles, BitBunker permite a los estudiantes <strong>organizar su tiempo de manera
+                        efectiva</strong>, asegurando que cada hora de servicio social sea contabilizada y registrada
+                    con precisión.
+
+                    A través de nuestra <strong>interfaz amigable</strong>, los estudiantes pueden <strong>generar
+                        reportes de manera rápida y sencilla</strong>, lo que les permite enfocarse en su aprendizaje y
+                    desarrollo personal. Además, BitBunker ofrece un <strong>seguimiento del progreso
+                        académico</strong>, ayudando a los usuarios a mantenerse al día con sus objetivos educativos.
+
+                    Únete a nosotros en BitBunker y <strong>transforma la manera en que gestionas tu servicio
+                        social</strong>. ¡Estamos aquí para apoyarte en cada paso del camino hacia tu éxito académico!
+                </p>
+            </section>
+            <section id="features" class="features">
+                <h2>Características principales</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <img src="{% static 'users/image/clock-icon.svg' %}" alt="Gestión de horas">
+                        <h3>Gestión de horas</h3>
+                        <p>Registra y monitorea tus horas de servicio social de manera sencilla.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="{% static 'users/image/report-icon.svg' %}" alt="Generación de reportes">
+                        <h3>Generación de reportes</h3>
+                        <p>Crea informes detallados de tu progreso con un solo clic.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="{% static 'users/image/progress-icon.svg' %}" alt="Seguimiento académico">
+                        <h3>Seguimiento académico</h3>
+                        <p>Mantén un registro actualizado de tu avance en el servicio social.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 BitBunker - Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

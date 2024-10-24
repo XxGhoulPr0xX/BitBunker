@@ -44,5 +44,7 @@ def login(request):
                 print("Contraseña incorrecta")
         except Usuario.DoesNotExist:
             print("Usuario no encontrado")
-
     return render(request, 'users/login.html')
+
+def inicio(request):
+    return render(request, 'users/inicio.html')
