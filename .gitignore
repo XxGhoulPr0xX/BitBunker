@@ -1,0 +1,4 @@
+BitBunker/__pycache__/
+.git
+env/
+db.sqlite3

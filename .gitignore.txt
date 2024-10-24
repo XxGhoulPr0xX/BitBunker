@@ -1,3 +1,0 @@
-.git
-env
-db.sqlite3
