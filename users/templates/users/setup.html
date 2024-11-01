@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Perfil</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/setup.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/inter.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Configuración de Perfil</h1>
+            <p>Actualiza tu información personal y genera reportes</p>
+        </div>
+        <form>
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="semester" class="sr-only">Semestre Actual</label>
+                    <select id="semester" name="semester" required>
+                        <option value="">Selecciona un semestre</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <label for="firstName" class="sr-only">Nombre</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Nombre" required>
+                </div>
+                <div class="input-field">
+                    <label for="middleName" class="sr-only">Apellido Paterno</label>
+                    <input type="text" id="middleName" name="middleName" placeholder="Apellido Paterno" required>
+                </div>
+                <div class="input-field">
+                    <label for="lastName" class="sr-only">Apellido Materno</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Apellido Materno" required>
+                </div>
+            </div>
+            <div class="button-row">
+                <button type="button" onclick="generateReport(1)">Generar Reporte 1</button>
+                <button type="button" onclick="generateReport(2)">Generar Reporte 2</button>
+                <button type="button" onclick="generateReport(3)">Generar Reporte 3</button>
+            </div>
+            <button type="submit" class="submit-button">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <script>
+        function generateReport(reportNumber) {
+            alert(`Generando reporte ${reportNumber}`);
+        }
+    </script>
+</body>
+</html>

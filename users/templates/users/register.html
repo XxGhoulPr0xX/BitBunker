@@ -15,8 +15,7 @@
     <div class="form-container">
       <div class="header">
         <h1>Crea una cuenta</h1>
-        <p>
-          ¿Ya tienes una cuenta?
+        <p>¿Ya tienes una cuenta?
           <a href="{% url 'login' %}" class="login-link">Inicia sesión</a>
         </p>
       </div>
@@ -47,6 +46,31 @@
           <label for="password" class="sr-only">Contraseña</label>
           <input type="password" id="password" name="password" placeholder="Contraseña" required minlength="8">
         </div>
+
+        <div class="input-field">
+          <label for="periodo" class="sr-only">Periodo</label>
+          <select id="periodo" name="periodo" required>
+            <option value="">Selecciona el periodo</option>
+            <option value="A">Periodo A (29 de enero - 31 de mayo)</option>
+            <option value="B">Periodo B (21 de agosto - 8 de diciembre)</option>
+          </select>
+        </div>
+
+        <div class="input-field">
+          <label for="semestre" class="sr-only">Semestre</label>
+          <select id="semestre" name="semestre" required>
+            <option value="">Selecciona el semestre</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+
         <button type="submit" class="submit-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">

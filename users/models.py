@@ -3,10 +3,11 @@ from django.contrib.auth.hashers import make_password
 
 class Usuario(models.Model):
     matricula = models.CharField(max_length=9, primary_key=True)
-    password = models.CharField(max_length=128)  # Ajustado para contraseñas encriptadas
+    password = models.CharField(max_length=128)
     nombre = models.CharField(max_length=30)
     apellidoM = models.CharField(max_length=30, blank=True)
     apellidoP = models.CharField(max_length=30)
+    semestre = models.CharField(max_length=2)
     
 class RegistroAlServicioSocial(models.Model):
     idRegistro = models.AutoField(primary_key=True)
