@@ -8,19 +8,30 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'users/css/home.css' %}">
     <link rel="stylesheet" href="{% static 'users/css/inter.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <div class="container">
-        <button class="button" aria-label="Toggle power">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
-                viewBox="0 0 24 24" class="icon">
-                <path d="M12 2v10"></path>
-                <path d="M18.4 6.6a9 9 0 1 1-12.77.04"></path>
-            </svg>
+        
+        <i class='bx bxs-moon' id="noc"></i>
+        
+        <span class="afr">modo claro / oscuro</span>
+        <i class='bx bxs-sun' id="dia"></i>
+        
+        <div class="ray" id="bot"></div>
+        <button class="bc" id="boton"><i class='bx bxs-circle'></i></button>
+    
+    <div class="container" >
+        <button class="button" aria-label="Toggle power" id="container">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" class="icon" id="text">
+                    <path d="M12 2v10" id="text"></path>
+                    <path d="M18.4 6.6a9 9 0 1 1-12.77.04" id="text"></path>
+                </svg>
+        
         </button>
         <div class="links">
-            <a class="link" href="{% url 'setup' %}">
+            <a class="linkc" href="{% url 'setup' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
                     viewBox="0 0 24 24" class="icon">
                     <path
@@ -29,14 +40,14 @@
                     <circle cx="12" cy="12" r="3"></circle>
                 </svg>
             </a>
-            <a class="link" href="{% url 'profile' %}">
+            <a class="linkp"  href="{% url 'profile' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
                     viewBox="0 0 24 24" class="icon">
                     <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
                 </svg>
             </a>
-            <a class="link" href="{% url 'inicio' %}">
+            <a class="linkl" href="{% url 'inicio' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
                     viewBox="0 0 24 24" class="icon">
                     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
@@ -46,9 +57,9 @@
             </a>
         </div>
         <div class="progress">
-            <span class="bold">{{ horasActuales }}</span> horas completadas / de <span class="bold">500</span>
+            <span class="bold" id="text">{{ horasActuales }}</span> <span>horas completadas / de </span> <span class="bold">500</span>
         </div>
     </div>
 </body>
-
+<script src="{% static 'users/js/home.js' %}"></script>
 </html>
