@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('q').addEventListener('click', function () {
         sendDataToServer(1);
@@ -39,8 +38,4 @@ async function sendDataToServer(reportNumber) {
         console.error('Error al enviar los datos al servidor:', error);
         alert('Error al conectar con el servidor.');
     }
-}
-
-function getCsrfToken() {
-    return document.querySelector('[name=csrfmiddlewaretoken]').value;
 }

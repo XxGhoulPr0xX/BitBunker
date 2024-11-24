@@ -86,3 +86,9 @@ document.getElementById("contador").addEventListener("click", async function () 
         });
     }
 });
+    
+    Array.from(sal).forEach(link => {
+        link.style.color = "#E02A19";
+    });
+
+    t = !t;
