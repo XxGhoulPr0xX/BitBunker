@@ -121,6 +121,18 @@
             display: flex;
             align-items: center;
         }
+        .inputa:hover {
+            background-color: #666;
+        }
+        #a{
+            transition: .5s;
+            background-color: #ccc;
+        }
+        #a:hover{
+            scale: 1.05;
+            background-color: #595959;
+
+        }
 
         .input-icon {
             margin-left: 0.5rem;
@@ -145,17 +157,22 @@
         }
 
         .button:hover {
-            background-color: #333;
+            background-color: #595959;
+            color: #000;
         }
 
         .button-secondary {
             background-color: transparent;
             color: #000;
             margin-top: 0.75rem;
+            width: 320px;
+            transition: 0.4s;
         }
 
         .button-secondary:hover {
-            background-color: #f0f0f0;
+            background-color: #5a5656;
+            color: aliceblue;
+            scale: 1.01;
         }
 
         .button-group {

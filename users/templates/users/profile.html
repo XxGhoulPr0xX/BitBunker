@@ -23,27 +23,27 @@
         <div class="content grid grid-cols-2">
             <div>
                 <label class="field-label" for="control-number">Número de Control</label>
-                <input class="field-input" id="control-number" readonly value="211064018" />
+                <input class="field-input" id="control-number" readonly value="{{ matricula }}" />
             </div>
             <div>
                 <label class="field-label" for="semester">Semestre Actual</label>
-                <input class="field-input" id="semester" readonly value="8" />
+                <input class="field-input" id="semester" readonly value="{{ semestre }}" />
             </div>
             <div>
                 <label class="field-label" for="name">Nombre</label>
-                <input class="field-input" id="name" readonly value="Francisco Javier" />
+                <input class="field-input" id="name" readonly value="{{ nombre }}" />
             </div>
             <div>
                 <label class="field-label" for="paternal-surname">Apellido Paterno</label>
-                <input class="field-input" id="paternal-surname" readonly value="Alvarado" />
+                <input class="field-input" id="paternal-surname" readonly value="{{ apellidoP }}" />
             </div>
             <div>
                 <label class="field-label" for="maternal-surname">Apellido Materno</label>
-                <input class="field-input" id="maternal-surname" readonly value="Marquez" />
+                <input class="field-input" id="maternal-surname" readonly value="{{ apellidoM }}" />
             </div>
             <div>
                 <label class="field-label" for="credits">Conteo de horas actuales</label>
-                <input class="field-input" id="credits" readonly value="180" />
+                <input class="field-input" id="credits" readonly value="{{ horas }}" />
             </div>
             <a href="{% url 'home' %}" class="button button--primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"

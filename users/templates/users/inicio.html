@@ -23,6 +23,13 @@
             </nav>
         </header>
         <main>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             <section class="hero">
                 <h1>Bienvenido a BitBunker</h1>
                 <p>Gestiona y monitorea eficientemente el seguimiento y reporte de tus horas de servicio social.</p>

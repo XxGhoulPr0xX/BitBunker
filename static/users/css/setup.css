@@ -127,7 +127,7 @@ select:focus {
     flex: 1;
 }
 
-button {
+button,a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,7 +144,7 @@ button {
     transition: background-color 0.2s;
 }
 
-button:hover {
+button:hover,a:hover {
     background-color: var(--button-hover);
 }
 
