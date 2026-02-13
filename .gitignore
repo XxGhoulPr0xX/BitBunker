@@ -1,4 +1,6 @@
 BitBunker/__pycache__/
+users/__pycache__/
+users/migrations/__pycache__/
 .git
-env/
+.venv
 db.sqlite3
