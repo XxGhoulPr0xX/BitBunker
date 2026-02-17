@@ -140,13 +140,13 @@ form {
 .input-op select:hover {
     background-color: var(--input-hover);
     border-color: var(--border-focus);
-    color:var(--btn-text)
+    color: var(--btn-text)
 }
 
 .input-op select:focus {
     border-color: var(--border-focus);
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
-    color:var(--btn-text)
+    color: var(--btn-text)
 }
 
 .sr-only {
@@ -218,6 +218,15 @@ input:focus {
 
 .icon {
     margin-right: 8px;
+}
+
+.errorRegistro {
+    color: #c62828;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9em;
 }
 
 @media (max-width: 640px) {
