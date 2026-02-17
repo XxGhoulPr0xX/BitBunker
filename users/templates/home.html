@@ -10,16 +10,7 @@
     <link rel="stylesheet" href="{% static 'users/css/inter.css' %}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
-    <i class='bx bxs-moon' id="noc"></i>
-
-    <span class="afr">modo claro / oscuro</span>
-    <i class='bx bxs-sun' id="dia"></i>
-
-    <div class="ray" id="bot"></div>
-    <button class="bc" id="boton"><i class='bx bxs-circle'></i></button>
-
     <div class="container">
         <button class="button" aria-label="Toggle power" id="contador">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
@@ -55,7 +46,7 @@
             </a>
         </div>
         <div class="progress">
-            <span class="bold" id="horasActuales">{{ horasActuales }}</span> 
+            <span class="bold" id="horasActuales">{{ horasActuales|default:0 }}</span>
             <span>horas completadas / de </span> 
             <span class="bold">500</span>
         </div>        

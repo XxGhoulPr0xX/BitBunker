@@ -23,18 +23,18 @@
             </nav>
         </header>
         <main>
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
             <section class="hero">
                 <h1>Bienvenido a BitBunker</h1>
                 <p>Gestiona y monitorea eficientemente el seguimiento y reporte de tus horas de servicio social.</p>
                 <a href="{% url 'login' %}" class="cta-button">Inicia sesión</a>
             </section>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                            {{ message }}
+                    {% endfor %}
+                </ul>
+            {% endif %}
             <section id="about" class="about">
                 <h2>Acerca de BitBunker</h2>
                 <p>

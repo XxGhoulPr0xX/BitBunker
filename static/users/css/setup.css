@@ -1,11 +1,17 @@
+/* ===== SETUP ===== */
+
 :root {
-    --background-start: #000000;
-    --background-end: #333333;
-    --text-color: #ffffff;
-    --input-background: rgba(255, 255, 255, 0.2);
-    --button-background: #eab308;
-    --button-hover: #facc15;
-    --button-text: #1f2937;
+    --bg: #0a0a0a;
+    --text: #ffffff;
+    --text-muted: #a0a0a0;
+    --border: rgba(255, 255, 255, 0.12);
+    --border-focus: rgba(255, 255, 255, 0.4);
+    --input-bg: rgba(255, 255, 255, 0.06);
+    --input-hover: rgba(255, 255, 255, 0.1);
+    --btn-bg: #ffffff;
+    --btn-text: #0a0a0a;
+    --btn-hover: #e0e0e0;
+    --radius: 8px;
 }
 
 * {
@@ -15,15 +21,12 @@
 }
 
 body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(to bottom right, var(--background-start), var(--background-end));
-    color: var(--text-color);
     min-height: 100vh;
 }
 
@@ -35,18 +38,21 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 h1 {
-    font-size: 2.25rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 8px;
+    letter-spacing: -0.025em;
+    color: var(--text);
 }
 
 p {
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
 form {
@@ -77,49 +83,53 @@ form {
     border-width: 0;
 }
 
-input{
+input {
     width: 100%;
-    height: 40px;
-    padding: 10px 15px;
-    font-size: 1rem;
-    color: var(--text-color);
-    background-color: var(--input-background);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    height: 44px;
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-input::placeholder{
-    color: rgba(255, 255, 255, 0.5);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-input:focus{
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+input::placeholder {
+    color: var(--text-muted);
+}
+
+input:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
 }
 
 select {
     width: 100%;
-    height: 40px;
-    padding: 10px 15px;
-    font-size: 1rem;
-    color: var(--text-color);
-    background-color: var(--background-start);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    height: 44px;
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
 }
 
 select:focus {
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
 }
 
 .button-row {
     display: flex;
     justify-content: space-between;
-    gap: 16px;
+    gap: 12px;
     margin-bottom: 16px;
 }
 
@@ -127,25 +137,32 @@ select:focus {
     flex: 1;
 }
 
-button,a {
+button, a {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 40px;
+    height: 44px;
     padding: 8px 16px;
     font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--button-text);
-    background-color: var(--button-background);
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: var(--btn-text);
+    background-color: var(--btn-bg);
     border: none;
-    border-radius: 4px;
+    border-radius: var(--radius);
     cursor: pointer;
-    transition: background-color 0.2s;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    letter-spacing: -0.01em;
 }
 
-button:hover,a:hover {
-    background-color: var(--button-hover);
+button:hover, a:hover {
+    background-color: var(--btn-hover);
+}
+
+button:active, a:active {
+    transform: scale(0.98);
 }
 
 @media (max-width: 640px) {

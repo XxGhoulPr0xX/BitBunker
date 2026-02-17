@@ -1,183 +1,231 @@
-        :root {
-            --background: 0 0% 100%;
-            --foreground: 240 10% 3.9%;
-            --card: 0 0% 100%;
-            --card-foreground: 240 10% 3.9%;
-            --popover: 0 0% 100%;
-            --popover-foreground: 240 10% 3.9%;
-            --primary: 240 5.9% 10%;
-            --primary-foreground: 0 0% 98%;
-            --secondary: 240 4.8% 95.9%;
-            --secondary-foreground: 240 5.9% 10%;
-            --muted: 240 4.8% 95.9%;
-            --muted-foreground: 240 3.8% 45%;
-            --accent: 240 4.8% 95.9%;
-            --accent-foreground: 240 5.9% 10%;
-            --destructive: 0 72% 51%;
-            --destructive-foreground: 0 0% 98%;
-            --border: 240 5.9% 90%;
-            --input: 240 5.9% 90%;
-            --ring: 240 5.9% 10%;
-            --radius: 0.5rem;
-        }
+/* ===== LOGIN ===== */
 
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Inter', sans-serif;
-        }
+:root {
+    --bg: #0a0a0a;
+    --card-bg: #111111;
+    --text: #ffffff;
+    --text-muted: #a0a0a0;
+    --border: rgba(255, 255, 255, 0.12);
+    --border-focus: rgba(255, 255, 255, 0.4);
+    --input-bg: rgba(255, 255, 255, 0.06);
+    --input-hover: rgba(255, 255, 255, 0.1);
+    --btn-bg: #ffffff;
+    --btn-text: #0a0a0a;
+    --btn-hover: #e0e0e0;
+    --btn-secondary-bg: transparent;
+    --btn-secondary-border: var(--border);
+    --btn-secondary-hover: rgba(255, 255, 255, 0.08);
+    --radius: 8px;
+}
 
-        body {
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(to bottom, black, #1a1a1a);
-            overflow: hidden;
-        }
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+}
 
-        .background-animation {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom right, #ff6b6b, #ffa500);
-            opacity: 0.2;
-            animation: pulse 2s infinite;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        @keyframes pulse {
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+}
 
-            0%,
-            100% {
-                opacity: 0.2;
-            }
+.background-animation {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top,
+            rgba(255, 255, 255, 0.03),
+            transparent 70%);
+    pointer-events: none;
+}
 
-            50% {
-                opacity: 0.3;
-            }
-        }
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 400px;
+    z-index: 10;
+}
 
-        .card {
-            background-color: white;
-            border-radius: var(--radius);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            z-index: 10;
-        }
+.card-header {
+    padding: 24px 24px 0;
+    text-align: center;
+}
 
-        .card-header {
-            padding: 1.5rem;
-            text-align: center;
-        }
+.card-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--text);
+}
 
-        .card-title {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+.card-description {
+    margin-top: 8px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
 
-        .card-description {
-            margin-top: 0.25rem;
-            font-size: 0.875rem;
-            color: #666;
-        }
+.card-content {
+    padding: 24px;
+}
 
-        .card-content {
-            padding: 1.5rem;
-        }
+.form-group {
+    margin-bottom: 16px;
+}
 
-        .form-group {
-            margin-bottom: 1rem;
-        }
+.form-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
 
-        .form-label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    font-family: "Inter", sans-serif;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--input-bg);
+    color: var(--text);
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
 
-        .form-input {
-            width: 100%;
-            padding: 0.5rem;
-            font-size: 0.875rem;
-            border: 1px solid #ccc;
-            border-radius: var(--radius);
-            background-color: white;
-        }
+.form-input::placeholder {
+    color: var(--text-muted);
+}
 
-        .form-input:focus {
-            outline: none;
-            border-color: #000;
-            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-        }
+.form-input:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
 
-        .input-group {
-            display: flex;
-            align-items: center;
-        }
-        .inputa:hover {
-            background-color: #666;
-        }
-        #a{
-            transition: .5s;
-            background-color: #ccc;
-        }
-        #a:hover{
-            scale: 1.05;
-            background-color: #595959;
+.form-input:hover {
+    background-color: var(--input-hover);
+}
 
-        }
+.input-group {
+    display: flex;
+    align-items: center;
+}
 
-        .input-icon {
-            margin-left: 0.5rem;
-            color: #666;
-        }
+.inputa:hover {
+    background-color: var(--input-hover);
+}
 
-        .button {
-            display: block;
-            width: 100%;
-            padding: 0.75rem 1rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            text-align: center;
-            text-decoration: none;
-            white-space: nowrap;
-            background-color: #000;
-            color: #fff;
-            border: 1px solid #000;
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
+#a {
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-muted);
+}
 
-        .button:hover {
-            background-color: #595959;
-            color: #000;
-        }
+#a:hover {
+    background-color: var(--input-hover);
+    transform: scale(1.02);
+}
 
-        .button-secondary {
-            background-color: transparent;
-            color: #000;
-            margin-top: 0.75rem;
-            width: 320px;
-            transition: 0.4s;
-        }
+.input-icon {
+    margin-left: 8px;
+    color: var(--text-muted);
+}
 
-        .button-secondary:hover {
-            background-color: #5a5656;
-            color: aliceblue;
-            scale: 1.01;
-        }
+.button {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+    letter-spacing: -0.01em;
+}
 
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 1.5rem;
-        }
+.button:hover {
+    background-color: var(--btn-hover);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.button-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--text);
+    border: 1px solid var(--btn-secondary-border);
+    margin-top: 12px;
+    width: 100%;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.button-secondary:hover {
+    background-color: var(--btn-secondary-hover);
+}
+
+.button-secondary:active {
+    transform: scale(0.98);
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.vuelveIntentar {
+    align-items: center;
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #ff0000;
+    font-family: monospace;
+    font-size: 11px;
+}

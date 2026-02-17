@@ -1,24 +1,33 @@
+/* ===== REGISTER ===== */
+
 :root {
-    --background-start: #000000;
-    --background-end: #333333;
-    --text-color: #ffffff;
-    --input-background: rgba(255, 255, 255, 0.2);
-    --button-background: #eab308;
-    --button-hover: #facc15;
-    --button-text: #1f2937;
+    --bg: #0a0a0a;
+    --bg-card: #111111;
+    --text: #ffffff;
+    --text-muted: #a0a0a0;
+    --border: rgba(255, 255, 255, 0.12);
+    --border-focus: rgba(255, 255, 255, 0.4);
+    --input-bg: rgba(255, 255, 255, 0.06);
+    --input-hover: rgba(255, 255, 255, 0.1);
+    --btn-bg: #ffffff;
+    --btn-text: #0a0a0a;
+    --btn-hover: #e0e0e0;
+    --radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    justify-items:center;
-    margin: 0;
-    padding: 0;
-    border:0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(to bottom right, var(--background-start), var(--background-end));
-    color: var(--text-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: 100vh;
 }
 
@@ -29,7 +38,8 @@ body {
     min-height: 100vh;
     padding: 48px 16px;
 }
-.general{
+
+.general {
     display: flex;
     justify-items: center;
     position: absolute;
@@ -42,28 +52,32 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 h1 {
-    font-size: 2.25rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 8px;
+    letter-spacing: -0.025em;
+    color: var(--text);
 }
 
 p {
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
 .login-link {
-    color: var(--text-color);
+    color: var(--text);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
 }
 
 .login-link:hover {
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
 form {
@@ -74,46 +88,65 @@ form {
 
 .input-group {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 4px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
 
 .input-field {
     width: 100%;
-    
 }
 
 .input-field input {
-    width: 75%;
-    height:15px;
+    width: 100%;
+    height: 44px;
 }
+
 .input-field input:hover {
-    background-color:gray;
-    color:#000000;
+    background-color: var(--input-hover);
 }
+
 .input-pass input:hover {
-    background-color:gray;
-    color:#000000;
+    background-color: var(--input-hover);
 }
-.input-pass{
+
+.input-pass {
     grid-column-start: 1;
-    grid-column-end:3;
+    grid-column-end: 3;
 }
-.input-pass input{
-    min-width:88%;
-    height:15px;
+
+.input-pass input {
+    width: 100%;
+    height: 44px;
 }
-.input-op select{
-    min-width:95%;
-    border-radius: 5px;
-    height:25px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color:solid gray;
-    transition: .2s;
+
+.input-op select {
+    width: 100%;
+    height: 44px;
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
-.input-op select:hover{
-    scale:1.01;
-    background-color:#ffffff;
+
+.input-op select:hover {
+    background-color: var(--input-hover);
+    border-color: var(--border-focus);
+    color:var(--btn-text)
+}
+
+.input-op select:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+    color:var(--btn-text)
 }
 
 .sr-only {
@@ -129,52 +162,58 @@ form {
 }
 
 input {
-    width: 100px; 
-    max-width: 250px;  
-    height: 40px; 
-    padding: 10px 15px;  
-    font-size: 1rem;
-    color: var(--text-color);
-    background-color: var(--input-background);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    width: 100%;
+    height: 44px;
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-
 input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-muted);
 }
 
 input:focus {
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
 }
-.i{
-    display:flex;
+
+.i {
+    display: flex;
     justify-content: center;
 }
+
 .submit-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 95%;
-    height: 40px;
+    width: 100%;
+    height: 44px;
     padding: 8px 16px;
     font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--button-text);
-    background-color: var(--button-background);
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: var(--btn-text);
+    background-color: var(--btn-bg);
     border: none;
-    border-radius: 4px;
+    border-radius: var(--radius);
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    letter-spacing: -0.01em;
 }
 
 .submit-button:hover {
-    background-color: var(--button-hover);
-    scale: 1.01;
+    background-color: var(--btn-hover);
+}
+
+.submit-button:active {
+    transform: scale(0.98);
 }
 
 .icon {
@@ -183,6 +222,11 @@ input:focus {
 
 @media (max-width: 640px) {
     .input-group {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .input-pass {
+        grid-column-start: 1;
+        grid-column-end: 2;
     }
 }

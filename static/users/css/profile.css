@@ -1,99 +1,141 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* ===== PROFILE ===== */
 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(to bottom right, #000000, #333333);
-            color: #333;
-        }
+:root {
+    --bg: #0a0a0a;
+    --card-bg: #111111;
+    --card-header-bg: #000000;
+    --text: #ffffff;
+    --text-muted: #a0a0a0;
+    --text-dark: #0a0a0a;
+    --border: rgba(255, 255, 255, 0.12);
+    --input-bg: rgba(255, 255, 255, 0.06);
+    --btn-bg: #ffffff;
+    --btn-text: #0a0a0a;
+    --btn-hover: #e0e0e0;
+    --btn-outline-bg: transparent;
+    --btn-outline-border: var(--border);
+    --btn-outline-hover: rgba(255, 255, 255, 0.08);
+    --radius: 8px;
+}
 
-        .container {
-            max-width: 500px;
-            width: 100%;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin: 20px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .header {
-            background: #000000;
-            color: white;
-            padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        .header h3 {
-            font-size: 1.5rem;
-        }
+.container {
+    max-width: 500px;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin: 20px;
+}
 
-        
-        .content {
-            padding: 16px;
-        }
+.header {
+    background: var(--card-header-bg);
+    color: var(--text);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
 
-        .grid {
-            display: grid;
-            gap: 16px;
-        }
+.header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
 
-        .grid-cols-2 {
-            grid-template-columns: 1fr 1fr;
-        }
+.content {
+    padding: 20px;
+}
 
-        .field-label {
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
+.grid {
+    display: grid;
+    gap: 16px;
+}
 
-        .field-input {
-            width: 100%;
-            padding: 8px;
-            font-size: 0.875rem;
-            border-radius: 4px;
-            border: 1px solid #d1d5db;
-            background-color: #f9fafb;
-        }
+.grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
+}
 
-        .button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border-radius: 4px;
-            border: 1px solid #d1d5db;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+.field-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
 
-        .button:hover {
-            background: #f3f4f6;
-        }
+.field-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background-color: var(--input-bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
 
-        .button--primary {
-            background-color: #111827;
-            color: white;
-            border-color: transparent;
-            text-decoration: none;
-        }
+.field-input:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
 
-        .button--primary:hover {
-            background-color: #374151;
-        }
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background-color: var(--btn-outline-bg);
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    letter-spacing: -0.01em;
+}
 
-        .button svg {
-            margin-right: 8px;
-        }
+.button:hover {
+    background-color: var(--btn-outline-hover);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.button--primary {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border-color: transparent;
+    text-decoration: none;
+}
+
+.button--primary:hover {
+    background-color: var(--btn-hover);
+}
+
+.button svg {
+    margin-right: 8px;
+}

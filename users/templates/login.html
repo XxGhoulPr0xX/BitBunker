@@ -44,6 +44,11 @@
                         </svg>
                     </div>
                 </div>
+                {% if datos %}
+                <div class="vuelveIntentar" >
+                    {{ datos }}
+                </div>
+                {% endif %}
                 <div class="button-group">
                     <button type="submit" class="button">Iniciar sesión</button>
                     <a href="{% url 'register' %}" class="button button-secondary">Registrarse</a>
@@ -52,4 +57,5 @@
         </div>
     </div>
 </body>
+
 </html>
