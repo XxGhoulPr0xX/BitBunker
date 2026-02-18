@@ -101,7 +101,7 @@ http://127.0.0.1:8000/
 
 ### 1. Construir la imagen (Build)
 
-Este comando lee tu `Dockerfile` y empaqueta todo tu código y dependencias en una imagen.
+Este comando lee el `Dockerfile` y empaqueta todo tu código y dependencias en una imagen.
 
 ```bash
 docker build -t BitBunker .
