@@ -229,3 +229,25 @@ body {
     font-family: monospace;
     font-size: 11px;
 }
+.datosModificados {
+    align-items: center;
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #04ff00;
+    font-family: monospace;
+    font-size: 11px;
+}
+.inicio-link {
+    color: var(--text);
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.inicio-link:hover {
+    opacity: 0.7;
+}

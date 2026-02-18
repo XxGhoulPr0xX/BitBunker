@@ -53,4 +53,27 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('q').addEventListener('click', () => sendDataToServer(1));
     document.getElementById('w').addEventListener('click', () => sendDataToServer(2));
     document.getElementById('e').addEventListener('click', () => sendDataToServer(3));
+
+    const form = document.getElementById('profileForm');
+    const saveButton = document.getElementById('saveButton');
+    
+    const inputs = form.querySelectorAll('input[type="text"]');
+    const initialValues = {};
+    inputs.forEach(input => {
+        initialValues[input.name] = input.value;
+    });
+    const checkChanges = () => {
+        let hasChanged = false;
+
+        inputs.forEach(input => {
+            if (input.value !== initialValues[input.name]) {
+                hasChanged = true;
+            }
+        });
+        saveButton.disabled = !hasChanged;
+        saveButton.style.opacity = hasChanged ? "1" : "0.5";
+    };
+    inputs.forEach(input => {
+        input.addEventListener('input', checkChanges);
+    });
 });

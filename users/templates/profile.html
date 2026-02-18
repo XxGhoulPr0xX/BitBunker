@@ -43,7 +43,7 @@
             </div>
             <div>
                 <label class="field-label" for="credits">Conteo de horas actuales</label>
-                <input class="field-input" id="credits" readonly value="{{ horas }}" />
+                <input class="field-input" id="credits" readonly value="{{ horas|default:0 }}" />
             </div>
             <a href="{% url 'home' %}" class="button button--primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"

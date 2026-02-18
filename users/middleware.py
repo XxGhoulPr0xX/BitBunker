@@ -6,9 +6,10 @@ class LoginRequiredMiddleware:
 
     def __call__(self, request):
         public_paths = ['/login/', '/register/', '/index/'] 
-        
-        if not request.session.get('matricula') and request.path not in public_paths:
-            return redirect('login')
-
+        if not request.session.get('matricula'):
+            if request.path == '/':
+                return redirect('inicio')
+            if request.path not in public_paths:
+                return redirect('login')
         response = self.get_response(request)
         return response

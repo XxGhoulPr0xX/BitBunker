@@ -15,7 +15,9 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Iniciar sesión</h3>
-            <p class="card-description">Ingresa tu matricula y contraseña para acceder.</p>
+            <p class="card-description">Ingresa tu matricula y contraseña para acceder.
+                <a href="{% url 'inicio' %}" class="inicio-link">Volver a la página principal</a>
+            </p>
         </div>
         <div class="card-content">
             <form method="POST" action="{% url 'login' %}">
@@ -44,16 +46,22 @@
                         </svg>
                     </div>
                 </div>
+                {% if mensaje %}
+                    <div class="datosModificados">
+                        {{ mensaje }}
+                    </div>
+                {% endif %}
                 {% if datos %}
-                <div class="vuelveIntentar" >
-                    {{ datos }}
-                </div>
+                    <div class="vuelveIntentar">
+                        {{ datos }}
+                    </div>
                 {% endif %}
                 <div class="button-group">
                     <button type="submit" class="button">Iniciar sesión</button>
                     <a href="{% url 'register' %}" class="button button-secondary">Registrarse</a>
                 </div>
-                <p class="card-description">La persistencia de datos dentro del host y servidor se encuentra deshabilitada, es una prueba de conocimientos esta web</p>
+                <p class="card-description">La persistencia de datos dentro del host y servidor se encuentra
+                    deshabilitada, es una prueba de conocimientos esta web</p>
             </form>
         </div>
     </div>

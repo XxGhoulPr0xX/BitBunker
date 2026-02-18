@@ -144,4 +144,4 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_HTTPONLY = True
 
 # Tiempo de vida de la sesión (ej: 30 minutos de inactividad)
-SESSION_COOKIE_AGE = 300
+SESSION_COOKIE_AGE = 3600
